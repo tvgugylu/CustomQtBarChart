@@ -8,7 +8,7 @@ QT_CHARTS_USE_NAMESPACE
 #include <QStandardItemModel>
 #include <QItemSelectionModel>
 
-namespace Ui {class ChartPane;};
+namespace Ui { class ChartPane; };
 
 class ChartPane : public QWidget
 {
@@ -25,21 +25,20 @@ public:
 
 	ChartPane(QWidget *parent = 0);
 	~ChartPane();
-	
 
 	/*!
 	*@method:		draw
 	*@brief:		绘制二维柱状图
 	*@return:		void
-	*@accesss:		public 
+	*@accesss:		public
 	*/
 	void drawBar();
 	/*!
 	*@method:		setData
 	*@brief:		输入二维柱状图数据
-	*@param[in]:	barData	二维柱状图数据  
+	*@param[in]:	barData	二维柱状图数据
 	*@return:		void
-	*@accesss:		public 
+	*@accesss:		public
 	*/
 	void setData(const QMap<QString, QMap<QString, long long>>& barData);
 
@@ -48,7 +47,7 @@ public:
 	*@brief:		指定Label顺序
 	*@param[in]:	labels  指定顺序的label字符串
 	*@return:		void
-	*@accesss:		public 
+	*@accesss:		public
 	*/
 	void setLabels(const QStringList& labels);
 
@@ -57,16 +56,16 @@ public:
 	*@brief:		设置柱状图标题
 	*@param[in]:	title	柱状图标题
 	*@return:		void
-	*@accesss:		public 
+	*@accesss:		public
 	*/
 	void setTitle(const QString& title);
 
 	/*!
 	*@method:		setYLabel
-	*@brief:		设置Y轴Label显示文本 
+	*@brief:		设置Y轴Label显示文本
 	*@param[in]:	yLabel	Y轴Label显示文本
 	*@return:		void
-	*@accesss:		public 
+	*@accesss:		public
 	*/
 	void setYLabel(const QString& yLabel);
 
@@ -74,9 +73,9 @@ public:
 	*@method:		setOrientation
 	*@brief:		设置柱状图朝向属性
 	*@param[out]:	orientation
-	*@param[in]:	orientation  
+	*@param[in]:	orientation
 	*@return:		void
-	*@accesss:		public 
+	*@accesss:		public
 	*/
 	void setOrientation(BarOrientation orientation);
 
@@ -84,7 +83,7 @@ public:
 	*@method:		chart
 	*@brief:		获取QChart对象，用于设置
 	*@return:		QT_CHARTS_NAMESPACE::QChart*
-	*@accesss:		public 
+	*@accesss:		public
 	*/
 	QChart* chart();
 
@@ -94,7 +93,7 @@ protected:
 	*@method:		init
 	*@brief:		初始化模型与界面
 	*@return:		void
-	*@accesss:		protected 
+	*@accesss:		protected
 	*/
 	void init();
 
@@ -102,7 +101,7 @@ protected:
 	*@method:		clear
 	*@brief:		清理模型与界面
 	*@return:		void
-	*@accesss:		protected 
+	*@accesss:		protected
 	*/
 	void clear();
 
@@ -110,48 +109,48 @@ protected:
 	*@method:		clearChartUI
 	*@brief:		界面清理
 	*@return:		void
-	*@accesss:		protected 
+	*@accesss:		protected
 	*/
 	void clearChartUI();
 
 	/*!
 	*@method:		autoGenLabels
 	*@brief:		根据输入的model数据自动生成Labels
-	*@param[in]:	data   
+	*@param[in]:	data
 	*@return:		QStringList	Labels
-	*@accesss:		protected 
+	*@accesss:		protected
 	*/
-	QStringList autoGenLabels(const QMap<QString,QMap<QString,long long>>& data);
+	QStringList autoGenLabels(const QMap<QString, QMap<QString, long long>>& data);
 
 	/*!
 	*@method:		analyseData
 	*@brief:		分析输入的数据获取最大值、最小值
 	*@param[out]:	minVlue
 	*@param[out]:	maxValue
-	*@param[in]:	data  
+	*@param[in]:	data
 	*@return:		void
-	*@accesss:		protected 
+	*@accesss:		protected
 	*/
 	void analyseData(const QMap<QString, QMap<QString, long long>>& data,
-		long long& minVlue,long long& maxValue);
+		long long& minVlue, long long& maxValue);
 
 	/*!
 	*@method:		buildModel
 	*@brief:		利用数据和Label构建Model数据
 	*@param[out]:	model
-	*@param[in]:	data  
-	*@param[in]:	labels  
+	*@param[in]:	data
+	*@param[in]:	labels
 	*@return:		void
-	*@accesss:		protected 
+	*@accesss:		protected
 	*/
 	void buildModel(const QMap<QString, QMap<QString, long long>>& data,
-		const QStringList& labels,QStandardItemModel* model);
-	
+		const QStringList& labels, QStandardItemModel* model);
+
 	/*
 	 *	二维柱状图数据
 	 */
 	QMap<QString, QMap<QString, long long>> m_barData;
-	
+
 	QStandardItemModel* m_model;
 	QChart* m_chart;
 	QString m_title;
@@ -260,7 +259,5 @@ private slots:
 
 	void on_actZoomReset_triggered();
 };
-
-
 
 #endif // CHARTPANE_H

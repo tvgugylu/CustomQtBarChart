@@ -34,12 +34,12 @@
         <x>0</x>
         <y>0</y>
         <width>399</width>
-        <height>312</height>
+        <height>311</height>
        </rect>
       </property>
       <attribute name="icon">
        <iconset resource="barcharttest.qrc">
-        <normaloff>:/images/images/3.ico</normaloff>:/images/images/3.ico</iconset>
+        <normaloff>:/3.ico</normaloff>:/3.ico</iconset>
       </attribute>
       <attribute name="label">
        <string>图表设置</string>
@@ -380,12 +380,12 @@
         <x>0</x>
         <y>0</y>
         <width>399</width>
-        <height>312</height>
+        <height>311</height>
        </rect>
       </property>
       <attribute name="icon">
        <iconset resource="barcharttest.qrc">
-        <normaloff>:/images/images/39.ico</normaloff>:/images/images/39.ico</iconset>
+        <normaloff>:/39.ico</normaloff>:/39.ico</iconset>
       </attribute>
       <attribute name="label">
        <string>坐标轴设置</string>
@@ -742,7 +742,7 @@
       </property>
       <attribute name="icon">
        <iconset resource="barcharttest.qrc">
-        <normaloff>:/images/images/dis3.ico</normaloff>:/images/images/dis3.ico</iconset>
+        <normaloff>:/dis3.ico</normaloff>:/dis3.ico</iconset>
       </attribute>
       <attribute name="label">
        <string>曲线设置</string>
@@ -867,7 +867,7 @@
        </property>
        <property name="icon">
         <iconset resource="barcharttest.qrc">
-         <normaloff>:/images/images/setting.png</normaloff>:/images/images/setting.png</iconset>
+         <normaloff>:/setting.png</normaloff>:/setting.png</iconset>
        </property>
       </widget>
      </item>

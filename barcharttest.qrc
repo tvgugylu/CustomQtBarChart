@@ -1,8 +1,8 @@
 <RCC>
-  <qresource prefix="/images">
-    <file>images/setting.png</file>
-    <file>images/3.ico</file>
-    <file>images/39.ico</file>
-    <file>images/dis3.ico</file>
-  </qresource>
+    <qresource prefix="/">
+        <file>3.ico</file>
+        <file>39.ico</file>
+        <file>dis3.ico</file>
+        <file>setting.png</file>
+    </qresource>
 </RCC>

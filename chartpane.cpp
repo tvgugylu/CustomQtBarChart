@@ -25,11 +25,11 @@ void ChartPane::drawBar()
 		return drawBar();
 	}
 
-	QMap<QString,QBarSet*> barSets;
+	QMap<QString, QBarSet*> barSets;
 	for each (QString label in m_labels)
 	{
 		QBarSet* barSet = new QBarSet(label);
-		barSets.insert(label,barSet);
+		barSets.insert(label, barSet);
 	}
 
 	for (int nRow = 0; nRow < m_model->rowCount(); nRow++)
@@ -170,7 +170,7 @@ void ChartPane::clear()
 	{
 		m_model->clear();
 	}
-	
+
 	m_label.clear();
 	m_labels.clear();
 	m_title.clear();
@@ -200,7 +200,7 @@ QStringList ChartPane::autoGenLabels(const QMap<QString, QMap<QString, long long
 	return labels.toList();
 }
 
-void ChartPane::analyseData(const QMap<QString, QMap<QString, long long>>& data, 
+void ChartPane::analyseData(const QMap<QString, QMap<QString, long long>>& data,
 	long long& minVlue, long long& maxValue)
 {
 	for each (QString XKey in data.keys())
@@ -219,7 +219,7 @@ void ChartPane::analyseData(const QMap<QString, QMap<QString, long long>>& data,
 	}
 }
 
-void ChartPane::buildModel(const QMap<QString, QMap<QString, long long>>& data, 
+void ChartPane::buildModel(const QMap<QString, QMap<QString, long long>>& data,
 	const QStringList& labels, QStandardItemModel* model)
 {
 	model->setColumnCount(labels.length());
@@ -299,19 +299,17 @@ void ChartPane::on_LegendMarkerClicked()
 	default:
 		break;
 	}
-
-
 }
 
 void ChartPane::on_btnSetTitle_clicked()
-{ 
+{
 	//设置图标标题文字
 	QString str = ui->editTitle->text();
 	ui->chartViewBar->chart()->setTitle(str);
 }
 
 void ChartPane::on_btnSetTitleFont_clicked()
-{ 
+{
 	//设置图标标题文字的字体
 	QFont font = ui->chartViewBar->chart()->titleFont();
 	bool  ok = false;
@@ -399,7 +397,7 @@ void ChartPane::on_chkLegendVisible_clicked(bool checked)
 }
 
 void ChartPane::on_btnSetAxisRange_clicked()
-{ 
+{
 	//设置坐标轴的坐标范围
 	curAxis->setRange(ui->spinAxisMin->value(), ui->spinAxisMax->value());
 }
@@ -420,17 +418,16 @@ void ChartPane::on_checkBox_clicked(bool checked)
 }
 
 void ChartPane::on_chkGridLineVisible_clicked(bool checked)
-{ 
+{
 	//轴的网格线是否可见
 	curAxis->setGridLineVisible(checked);
 }
 
 void ChartPane::on_chkMinorTickVisible_clicked(bool checked)
-{ 
+{
 	//次级刻度是否可见
 	curAxis->setMinorGridLineVisible(checked);
 }
-
 
 void ChartPane::on_chkBoxLegendBackground_clicked(bool checked)
 {
@@ -463,7 +460,7 @@ void ChartPane::on_radioButton_4_clicked()
 }
 
 void ChartPane::on_btnLegendFont_clicked()
-{ 
+{
 	//图例的字体设置
 	QFont font = ui->chartViewBar->chart()->legend()->font();
 	bool  ok = false;
@@ -482,20 +479,19 @@ void ChartPane::on_btnLegendlabelColor_clicked()
 }
 
 void ChartPane::on_chkBoxVisible_clicked(bool checked)
-{ 
+{
 	//坐标轴是否可见
 	curAxis->setVisible(checked);
 }
 
-
 void ChartPane::on_btnAxisSetTitle_clicked()
-{ 
+{
 	//设置坐标轴的标题
 	curAxis->setTitleText(ui->editAxisTitle->text());
 }
 
 void ChartPane::on_btnAxisSetTitleFont_clicked()
-{ 
+{
 	//设置坐标轴的标题的字体
 	QFont   font = curAxis->titleFont();
 
@@ -506,7 +502,7 @@ void ChartPane::on_btnAxisSetTitleFont_clicked()
 }
 
 void ChartPane::on_chkBoxAxisTitle_clicked(bool checked)
-{ 
+{
 	//轴标题是否可见
 	curAxis->setTitleVisible(checked);
 }
@@ -545,7 +541,7 @@ void ChartPane::on_chkBoxLabelsVisible_clicked(bool checked)
 }
 
 void ChartPane::on_btnGridLineColor_clicked()
-{ 
+{
 	//网格线的颜色设置
 	QColor   color = curAxis->gridLineColor();
 
@@ -555,7 +551,7 @@ void ChartPane::on_btnGridLineColor_clicked()
 }
 
 void ChartPane::on_pushButton_10_clicked()
-{ 
+{
 	//网格线的Pen设置
 	QPen    pen;
 	pen = curAxis->gridLinePen();
@@ -584,7 +580,6 @@ void ChartPane::on_btnAxisLinePen_clicked()
 	if (ok)
 		curAxis->setLinePen(pen);
 }
-
 
 void ChartPane::on_btnAxisLinePenColor_clicked()
 {
@@ -624,9 +619,8 @@ void ChartPane::on_cBoxAnimation_currentIndexChanged(int index)
 	ui->chartViewBar->chart()->setAnimationOptions(QChart::AnimationOptions(index));
 }
 
-
 void ChartPane::on_cBoxTheme_currentIndexChanged(int index)
-{ 
+{
 	//图标的主题
 	ui->chartViewBar->chart()->setTheme(QChart::ChartTheme(index));
 }

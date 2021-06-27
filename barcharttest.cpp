@@ -43,5 +43,4 @@ BarChartTest::BarChartTest(QWidget *parent)
 
 BarChartTest::~BarChartTest()
 {
-	
 }
